@@ -119,7 +119,7 @@ comments: true
     ```
       var message = "some string";
       alert(typeof message); // string
-      alert(typeof (message)) //string, 연산자이므로 괄호는 쓰지 않는다.
+      alert(typeof (message)) // string, 연산자이므로 괄호는 쓰지 않는다.
       alert(typeof 95); // number
     ```
   - undefined
@@ -127,7 +127,7 @@ comments: true
     - var를 써서 변수를 정의했지만 초기화하지 않았다면 undefined
       ```
         var message; // 초기화를 하지 않았다.
-        alert(message == undefined); //true
+        alert(message == undefined); // true
       ```
     - typeof를 호출하면 선언되지 않은 변수와, 선언된 변수 두 다 undefined로 나온다.
 
@@ -142,8 +142,13 @@ comments: true
   - number
     - 스트릭트 모드에서는 8진법을 허용하지 않는다.
     - 부동소수점 숫자를 저장할 때는 메모리를 두 배로 소모하므로 가능 한 정수로 변환하여 저장해야 한다.
+    - e-표기법(지수 표기법): e 앞의 숫자에 10을 e 뒤에 숫자만큼 곱한다.
+      ```
+        var floatNum = 3.125e7; // 31,250,000
+      ```
     - NaN: Not a Number
-      숫자를 반환할 것으로 의도한 조작이 실패했을 때 반환하는 값
+      - 숫자를 반환할 것으로 의도한 조작이 실패했을 때 반환하는 값
+      - isNaN(): 매개 변수를 하나 받으며 해당 값이 '숫자가 아닌 값'인지 검사한다. 숫자로 변환할 수 없는 값을 넘기면 true로 반환한다. 숫자로 바꿀 수 있거나 숫자이면 false이다.
     - 숫자 변환
       - Number()
         - 매개변수로 boolean 값을 넘겼다면 1, 0으로 바꿔서 반환
@@ -151,13 +156,13 @@ comments: true
         - 매개변수로 undefined을 넘겼다면 0을 반환
         - 매개변수로 문자열을 넘겼다면 리딩 제로를 무시한다.
         - 빈 문자열은 0을 반환
-      - parserInt()
+      - parseInt()
         - 정수 형태의 문자열을 숫자로 바꿀 때 쓴다.
-  
+
 
 \[Think | undeifined는 정의는 됐지만, 초기화가 안 된 값을 의미하는 것일까요?]
 
- 
+
 - 연산자
 - 문장
 - 함수
