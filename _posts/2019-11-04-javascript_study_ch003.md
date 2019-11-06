@@ -113,7 +113,51 @@ comments: true
 
 \[Think | 학원에서 배운 예제를 사용하면 지역, 전역 변수를 구분하지 않아도 전부 에러가 나지 않는다. 이렇게 사용했을 때의 문제점이 있을까요?]
 
-- 데이터타입
+- 데이터 타입
+  - 원시(기본적인) 데이터 타입(Undefined, Null, boolean, Number, String) + 객체(Object)
+  - typeof 연산자를 통해서 데이터 타입을 알 수 있다.
+    ```
+      var message = "some string";
+      alert(typeof message); // string
+      alert(typeof (message)) //string, 연산자이므로 괄호는 쓰지 않는다.
+      alert(typeof 95); // number
+    ```
+  - undefined
+    - 특별한 값
+    - var를 써서 변수를 정의했지만 초기화하지 않았다면 undefined
+      ```
+        var message; // 초기화를 하지 않았다.
+        alert(message == undefined); //true
+      ```
+    - typeof를 호출하면 선언되지 않은 변수와, 선언된 변수 두 다 undefined로 나온다.
+
+  - null
+    - 빈 객체를 가리키는 포인터
+    - typeof를 호출하면 object로 반환한다.
+    - 변수가 객체를 가리키게 할 생각이라면 null로 초기화한다.
+
+  - boolean
+    - true, false 두 가지의 리터럴 값만 가진다.
+
+  - number
+    - 스트릭트 모드에서는 8진법을 허용하지 않는다.
+    - 부동소수점 숫자를 저장할 때는 메모리를 두 배로 소모하므로 가능 한 정수로 변환하여 저장해야 한다.
+    - NaN: Not a Number
+      숫자를 반환할 것으로 의도한 조작이 실패했을 때 반환하는 값
+    - 숫자 변환
+      - Number()
+        - 매개변수로 boolean 값을 넘겼다면 1, 0으로 바꿔서 반환
+        - 매개변수로 숫자를 넘겼다면 그대로 반환
+        - 매개변수로 undefined을 넘겼다면 0을 반환
+        - 매개변수로 문자열을 넘겼다면 리딩 제로를 무시한다.
+        - 빈 문자열은 0을 반환
+      - parserInt()
+        - 정수 형태의 문자열을 숫자로 바꿀 때 쓴다.
+  
+
+\[Think | undeifined는 정의는 됐지만, 초기화가 안 된 값을 의미하는 것일까요?]
+
+ 
 - 연산자
 - 문장
 - 함수
