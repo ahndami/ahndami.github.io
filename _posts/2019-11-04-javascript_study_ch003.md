@@ -166,3 +166,35 @@ comments: true
 - 연산자
 - 문장
 - 함수
+  ```
+    function sayHi(name, message){
+      alert("Hello"+name+","+message);
+    }
+
+    //위의 함수를 호출하는 코드
+    sayHi("Dami","how are you today?");
+
+  ```
+  - 함수는 return 문을 만나는 즉시 실행을 멈추고 빠져나온다. return 문 뒤의 코드는 결코 실행되지 않는다.
+  ```
+    function sum(num1, num2){
+      return num1 + num2;
+      alert("Hello world");
+    }
+
+    var result = sum(5, 10); // 결코 실행되지 않는다
+  ```
+  - 매개변수 어렵다. //도움
+  - 오버로딩 없음: 같은 이름으로 함수를 여러 번 정의하면 마지막 함수가 해당 이름을 소유한다.
+    ```
+      function addSomeNumber(num){
+        return num + 100;
+      }
+
+      function addSomeNumber(num){
+        return num + 200;
+      }
+
+      var result = addSomeNumber(100); // 300
+
+    ```
