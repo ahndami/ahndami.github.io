@@ -164,7 +164,74 @@ comments: true
 
 
 - 연산자
-- 문장
+- 문장(제어문)
+  - if 문
+    - condition()조건)에는 어떤 표현식이든 쓸 수 있다. 자동으로 Boolean() 함수를 호출해 불리언 값으로 바꾼다.
+    ```
+      // 기본
+      if(i > 25){
+        alert("Greater than 25.");
+      }else{
+        alert("Less than or equal to 25.");
+      }
+
+      // 연달아 사용
+      if(i > 25){
+        alert("Greater than 25.");
+      }else if(i < 0){
+        alert("Less than 0.");
+      }else{
+        alert("Between 0 and 25, inclusive.");
+      }
+      ```
+  - do-while 문
+    - 평가 전 루프(루프의 종료 조건을 평가하기 전에 루프 본문을 실행한다는 뜻)
+    - 루프 본문은 최소 한 번은 반드시 실행된다.
+    ```
+      var i = 0;
+      do {
+        i += 2;
+      } while (i < 10);
+    ```
+  - while 문
+    - 평가 후 루프(루프 본문을 실행하기 전에 종료 조건을 평가한다는 뜻)
+    - 루프 본문을 단 한번도 실행하지 않을 수도 있다.
+    ```
+      var i = 0;
+      while (i < 10){
+        i += 2;
+      }
+    ```
+  - for 문
+    - 평가 후 루프
+    - 루프에 들어가기 전에 변수를 초기화할 수 있다.
+    ```
+      var count = 10;
+      for (var i=0; i < count; i++){
+        alert(i);
+      }
+    ```
+  - 문장 레이블
+    - 문장에 레이블을 붙였다가 나중에 사용할 수 있다.
+    - 중첩된 루프에서 사용한다.
+    ```
+      start: for (var i=0; i < count; i++) {
+        alert(i);
+      } // 나중에 break, continue에서 참조
+    ```
+  - break 문과 continue 문
+    - break: 즉시 루프에서 빠져나가 루프 다음 문장을 실행한다.
+    - continue: 즉시 루프에서 빠져나가지만 루프 실행은 계속된다.
+  - with 문
+  - switch 문
+    ```
+      switch (i) {
+        case 25: // case는 '표현식이 value와 일치하면 statement를 실행하라.'는 의미이다.
+        alert("25");
+        break; // 코드 실행을 멈추고 switch 문을 빠져나간다.
+      }
+    ```
+
 - 함수
   ```
     function sayHi(name, message){
@@ -173,7 +240,6 @@ comments: true
 
     //위의 함수를 호출하는 코드
     sayHi("Dami","how are you today?");
-
   ```
   - 함수는 return 문을 만나는 즉시 실행을 멈추고 빠져나온다. return 문 뒤의 코드는 결코 실행되지 않는다.
   ```
@@ -196,5 +262,4 @@ comments: true
       }
 
       var result = addSomeNumber(100); // 300
-
     ```
